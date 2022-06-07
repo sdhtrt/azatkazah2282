@@ -20,7 +20,7 @@ def a(file):
     words = [i.split() for i in text[text.index(')') + 1:].split('=')]
     for word in range(1, len(words)):
         if words[word] and words[word - 1]:
-            if words[word][0][0] == '[':
+            if words[word][0][0] in '{([':
                 lists.append(words[word - 1][-1])
             elif words[word - 1][-1] in '+-*/%':
                 pass
